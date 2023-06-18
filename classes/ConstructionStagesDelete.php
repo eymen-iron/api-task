@@ -50,7 +50,7 @@ class ConstructionStagesDelete
                 ");
 
                 $stmt2->execute([
-                    'status' => 'delete',
+                    'status' => 'DELETED',
                     'id' => $id,
                 ]);
 

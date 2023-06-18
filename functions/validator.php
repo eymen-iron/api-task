@@ -125,9 +125,6 @@ function durationUnit($durationUnit)
 
 function calculateDuration($startDate, $endDate, $durationUnit)
 {
-    if (is_null($endDate)) {
-        return null;
-    }
 
     $startDateTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', $startDate);
     $endDateTime = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', $endDate);

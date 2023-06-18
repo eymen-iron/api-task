@@ -57,10 +57,10 @@ class ConstructionStagesUpdate
                 }else{
                     if($key != 'endDate'){
                      $messageVals[] = getValidate($key, $this->$key);
-                    }elseif($key == 'duration'){
-                        $this->$key = calculateDuration($this->startDate, $this->endDate, $this->durationUnit);
+                     $this->duration = calculateDuration($this->startDate, $this->endDate, $this->durationUnit);
                     }else{
                         $messageVals[] = getValidate($key, $this->$key, $this->startDate);
+                        $this->duration = calculateDuration($this->startDate, $this->endDate, $this->durationUnit);
                     }
                 }
             }
