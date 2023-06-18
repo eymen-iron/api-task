@@ -58,6 +58,12 @@ class ConstructionStagesUpdate
                     if($key != 'endDate'){
                      $messageVals[] = getValidate($key, $this->$key);
                      $this->duration = calculateDuration($this->startDate, $this->endDate, $this->durationUnit);
+                    }elseif($key == 'status'){
+                        $messageVals[] = array(
+                            'error' => false,
+                            'message' => 'Item updated successfully'
+                        );
+                        $this->duration = calculateDuration($this->startDate, $this->endDate, $this->durationUnit); 
                     }else{
                         $messageVals[] = getValidate($key, $this->$key, $this->startDate);
                         $this->duration = calculateDuration($this->startDate, $this->endDate, $this->durationUnit);
